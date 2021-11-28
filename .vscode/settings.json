@@ -1,22 +1,30 @@
 {
-    "workbench.colorCustomizations": {
-        "activityBar.activeBackground": "#f4c4ac",
-        "activityBar.activeBorder": "#138d3b",
-        "activityBar.background": "#f4c4ac",
-        "activityBar.foreground": "#15202b",
-        "activityBar.inactiveForeground": "#15202b99",
-        "activityBarBadge.background": "#138d3b",
-        "activityBarBadge.foreground": "#e7e7e7",
-        "sash.hoverBorder": "#f4c4ac",
-        "statusBar.background": "#eea47f",
-        "statusBar.foreground": "#15202b",
-        "statusBarItem.hoverBackground": "#e88452",
-        "statusBarItem.remoteBackground": "#eea47f",
-        "statusBarItem.remoteForeground": "#15202b",
-        "titleBar.activeBackground": "#eea47f",
-        "titleBar.activeForeground": "#15202b",
-        "titleBar.inactiveBackground": "#eea47f99",
-        "titleBar.inactiveForeground": "#15202b99"
-    },
-    "peacock.color": "#EEA47FFF"
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#f4c4ac",
+    "activityBar.activeBorder": "#138d3b",
+    "activityBar.background": "#f4c4ac",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#138d3b",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "sash.hoverBorder": "#f4c4ac",
+    "statusBar.background": "#eea47f",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#e88452",
+    "statusBarItem.remoteBackground": "#eea47f",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#eea47f",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#eea47f99",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#EEA47FFF",
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  "eslint.nodePath": ".yarn/sdks",
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }
