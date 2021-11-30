@@ -1,0 +1,26 @@
+{
+  "Import Apollo query component": {
+    "scope": "typescriptreact",
+    "prefix": "apollo-mutation-component",
+    "body": [
+      "import { gql, useMutation } from \"@apollo/client\";",
+      "",
+      "import {$2, $2Variables} from \"./__generated__/$2\"",
+      "",
+      "const ${3:NAME_QUERY} = gql`mutation ${2:Query}{  }`",
+      "",
+      "interface $1Props {",
+      "}",
+      "",
+      "function ${1:MyComponent}(props: $1Props) {",
+      "const [mutation] = useMutation<$2, $2Variables>($3, { variables: {  } })",
+      "",
+      "  return <div>$0</div>",
+      "}",
+      "",
+      "export default $1",
+      ""
+    ],
+    "description": "Create an apollo component with mutation hook"
+  }
+}

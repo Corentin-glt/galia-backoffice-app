@@ -1,0 +1,17 @@
+{
+  "Create a new React component": {
+    "scope": "typescriptreact",
+    "prefix": "react-new-component",
+    "body": [
+      "interface $1Props {",
+      "}",
+      "",
+      "function ${1:MyComponent}(props: $1Props) {",
+      "  return <div>$0</div>",
+      "}",
+      "",
+      "export default $1"
+    ],
+    "description": "Create a new React component"
+  }
+}

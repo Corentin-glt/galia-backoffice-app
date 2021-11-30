@@ -8,3 +8,4 @@ dist-ssr
 .pnp.loader.mjs
 postcss.config.js
 tailwind.config.js
+src/vite-env.d.ts
