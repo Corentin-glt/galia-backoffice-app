@@ -13,7 +13,7 @@ function NavBar() {
           {({ active }) => (
             <div className="flex justify-start">
               <Span
-                text="Wines"
+                text="Wines 🍷"
                 active={active || pathname.includes('wines')}
               />
             </div>
@@ -23,7 +23,7 @@ function NavBar() {
           {({ active }) => (
             <div className="flex justify-start">
               <Span
-                text="Wineyards"
+                text="Wineyards 🏡"
                 active={active || pathname.includes('wineyards')}
               />
             </div>
@@ -33,7 +33,7 @@ function NavBar() {
           {({ active }) => (
             <div className="flex justify-start">
               <Span
-                text="Grapes"
+                text="Grapes 🍇"
                 active={active || pathname.includes('grapes')}
               />
             </div>
