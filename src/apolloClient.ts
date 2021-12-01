@@ -26,29 +26,29 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (networkError) console.log(`[Network error]: ${networkError}`);
 });
 
-// const cache = new InMemoryCache({
-//   typePolicies: {
-//     WineConnection: {
-//       fields: {
-//         items: {
-//           keyArgs: [],
-//           merge(existing, incoming, { args }) {
-//             // Slicing is necessary because the existing data is
-//             // immutable, and frozen in development.
-//             const merged = existing ? existing.slice(0) : [];
-//             for (let i = 0; i < incoming.length; ++i) {
-//               merged[args?.offset || 0 + i] = incoming[i];
-//             }
-//             return merged;
-//           },
-//         },
-//       },
-//     },
-//   },
-// });
+const cache = new InMemoryCache({
+  typePolicies: {
+    WinesConnection: {
+      fields: {
+        items: {
+          keyArgs: [],
+          merge(existing, incoming, { args }) {
+            // Slicing is necessary because the existing data is
+            // immutable, and frozen in development.
+            const merged = existing ? existing.slice(0) : [];
+            for (let i = 0; i < incoming.length; ++i) {
+              merged[args?.offset || 0 + i] = incoming[i];
+            }
+            return merged;
+          },
+        },
+      },
+    },
+  },
+});
 
 const client = new ApolloClient({
-  cache: new InMemoryCache(),
+  cache,
   link: from([errorLink, httpLink]),
 });
 
