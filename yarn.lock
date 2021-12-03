@@ -487,6 +487,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@heroicons/react@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "@heroicons/react@npm:1.0.5"
+  peerDependencies:
+    react: ">= 16"
+  checksum: 12114af19c17f69140cc7338e4cd12fe38098ad3ed79f02762106160655cde3ebdba58a2b26f1067f720786187364fd9465bc72f02aad85b0ead8172d76aa51d
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.6.0":
   version: 0.6.0
   resolution: "@humanwhocodes/config-array@npm:0.6.0"
@@ -581,19 +590,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oclif/command@npm:^1.5.10, @oclif/command@npm:^1.5.12, @oclif/command@npm:^1.5.13, @oclif/command@npm:^1.5.20, @oclif/command@npm:^1.6.0, @oclif/command@npm:^1.8.4, @oclif/command@npm:^1.8.5":
-  version: 1.8.6
-  resolution: "@oclif/command@npm:1.8.6"
+"@oclif/command@npm:^1.5.10, @oclif/command@npm:^1.5.12, @oclif/command@npm:^1.5.13, @oclif/command@npm:^1.5.20, @oclif/command@npm:^1.6.0, @oclif/command@npm:^1.8.6, @oclif/command@npm:^1.8.7":
+  version: 1.8.7
+  resolution: "@oclif/command@npm:1.8.7"
   dependencies:
-    "@oclif/config": ^1.17.1
+    "@oclif/config": ^1.18.1
     "@oclif/errors": ^1.3.5
     "@oclif/parser": ^3.8.6
-    "@oclif/plugin-help": ^3.2.8
+    "@oclif/plugin-help": ^3.2.10
     debug: ^4.1.1
     semver: ^7.3.2
   peerDependencies:
     "@oclif/config": ^1
-  checksum: f335ae5a097ef90cf90820258ca5286a39bc42b77d2557128432caabbe4283d4de8fc68fa8a4aef43ea91461d25c90a5109c3ad5705e30d67b01ef5bd823fb70
+  checksum: c9f42c27af5e14e1cef8cc67c900fffafafe95997c86ecfc8391a5078e739622908a9c096c263bb2e49b5504334d32cd7e80b9508ace68f4430457f34ea98d51
   languageName: node
   linkType: hard
 
@@ -611,7 +620,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oclif/config@npm:^1.12.8, @oclif/config@npm:^1.13.0, @oclif/config@npm:^1.15.1, @oclif/config@npm:^1.17.1":
+"@oclif/config@npm:^1.12.8, @oclif/config@npm:^1.13.0, @oclif/config@npm:^1.15.1, @oclif/config@npm:^1.18.1":
   version: 1.18.1
   resolution: "@oclif/config@npm:1.18.1"
   dependencies:
@@ -690,12 +699,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oclif/plugin-help@npm:^3, @oclif/plugin-help@npm:^3.2.8":
-  version: 3.2.9
-  resolution: "@oclif/plugin-help@npm:3.2.9"
+"@oclif/plugin-help@npm:^3, @oclif/plugin-help@npm:^3.2.10":
+  version: 3.2.10
+  resolution: "@oclif/plugin-help@npm:3.2.10"
   dependencies:
-    "@oclif/command": ^1.8.5
-    "@oclif/config": ^1.17.1
+    "@oclif/command": ^1.8.6
+    "@oclif/config": ^1.18.1
     "@oclif/errors": ^1.3.5
     chalk: ^4.1.2
     indent-string: ^4.0.0
@@ -703,8 +712,8 @@ __metadata:
     string-width: ^4.2.0
     strip-ansi: ^6.0.0
     widest-line: ^3.1.0
-    wrap-ansi: ^4.0.0
-  checksum: dbb5326d736a12fd15a203b7018b93f2119025d7d1e1f64595c09f7afb901e317639c2a511c9b24b35ec78d65c8c4e586363b4e254d8acb50ef5acb13d823c05
+    wrap-ansi: ^6.2.0
+  checksum: e9db3386f115645973936ce4b1923512b487419576742b5c5e8198d450c7eabfb0e1ebbec4891a585cd9e85800831c6bccce6ea21b978ff7f44622865c595643
   languageName: node
   linkType: hard
 
@@ -759,7 +768,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oclif/screen@npm:^1.0.3":
+"@oclif/screen@npm:^1.0.3, @oclif/screen@npm:^1.0.4":
   version: 1.0.4
   resolution: "@oclif/screen@npm:1.0.4"
   checksum: 13e64efb1a6b4cf89989dd3e96cc78751193257694f9f104d3d41f7f8d12e217297d3c2983ed972d84d43ff3b50ceff50529996ee6bc6764f01ed90aa39a83cb
@@ -819,6 +828,24 @@ __metadata:
   version: 1.1.2
   resolution: "@tootallnate/once@npm:1.1.2"
   checksum: e1fb1bbbc12089a0cb9433dc290f97bddd062deadb6178ce9bcb93bb7c1aecde5e60184bc7065aec42fe1663622a213493c48bbd4972d931aae48315f18e1be9
+  languageName: node
+  linkType: hard
+
+"@types/apollo-upload-client@npm:^14.1.0":
+  version: 14.1.0
+  resolution: "@types/apollo-upload-client@npm:14.1.0"
+  dependencies:
+    "@apollo/client": ^3.1.3
+    "@types/extract-files": "*"
+    graphql: ^15.3.0
+  checksum: a5b8fa32774c00b3a80a19aeb37d27ff66496049aa3e64fffbc9f440620623cfe8100e8cedaeafc51985bec2b00a3d554c3c7f2e301570fd6aeca06eb52d03f3
+  languageName: node
+  linkType: hard
+
+"@types/extract-files@npm:*":
+  version: 8.1.1
+  resolution: "@types/extract-files@npm:8.1.1"
+  checksum: cc26ced9c199b787cf833121247c084b41a5f9058da6947a3368947e5d85a34328752234ab6a04c950579ba91ae7800a0735bc10380225f131b868c25ab89899
   languageName: node
   linkType: hard
 
@@ -1477,6 +1504,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"apollo-upload-client@npm:^16.0.0":
+  version: 16.0.0
+  resolution: "apollo-upload-client@npm:16.0.0"
+  dependencies:
+    extract-files: ^11.0.0
+  peerDependencies:
+    "@apollo/client": ^3.0.0
+    graphql: 14 - 15
+  checksum: 7a29f31f46000044a6d7faf0cb9a26c7b1d6e641dec38f1294529338c6f030b696e12f6d37e2c10313553e5351ad70ff6d1400097b47dcb04a3e1464071d6fd7
+  languageName: node
+  linkType: hard
+
 "apollo-utilities@npm:^1.3.0":
   version: 1.3.4
   resolution: "apollo-utilities@npm:1.3.4"
@@ -1544,14 +1583,17 @@ __metadata:
   dependencies:
     "@apollo/client": ~3.4.17
     "@headlessui/react": ^1.4.2
+    "@heroicons/react": ^1.0.5
     "@tailwindcss/forms": ^0.3.4
     "@tailwindcss/typography": ^0.4.1
+    "@types/apollo-upload-client": ^14.1.0
     "@types/react": ^17.0.0
     "@types/react-dom": ^17.0.0
     "@typescript-eslint/eslint-plugin": ^5.4.0
     "@typescript-eslint/parser": ^5.4.0
     "@vitejs/plugin-react": ^1.0.0
     apollo: ^2.33.9
+    apollo-upload-client: ^16.0.0
     autoprefixer: ^10.4.0
     eslint: ^8.3.0
     eslint-config-prettier: ^8.3.0
@@ -2093,13 +2135,13 @@ __metadata:
   linkType: hard
 
 "cli-ux@npm:^5.2.1":
-  version: 5.6.4
-  resolution: "cli-ux@npm:5.6.4"
+  version: 5.6.5
+  resolution: "cli-ux@npm:5.6.5"
   dependencies:
-    "@oclif/command": ^1.8.4
+    "@oclif/command": ^1.8.7
     "@oclif/errors": ^1.3.5
     "@oclif/linewrap": ^1.0.0
-    "@oclif/screen": ^1.0.3
+    "@oclif/screen": ^1.0.4
     ansi-escapes: ^4.3.0
     ansi-styles: ^4.2.0
     cardinal: ^2.1.1
@@ -2112,7 +2154,7 @@ __metadata:
     indent-string: ^4.0.0
     is-wsl: ^2.2.0
     js-yaml: ^3.13.1
-    lodash: ^4.17.11
+    lodash: ^4.17.21
     natural-orderby: ^2.0.1
     object-treeify: ^1.1.4
     password-prompt: ^1.1.2
@@ -2122,7 +2164,7 @@ __metadata:
     supports-color: ^8.1.0
     supports-hyperlinks: ^2.1.0
     tslib: ^2.0.0
-  checksum: 49d4f8cf4cff97299f1051056e906be0ecf0db9728d1f387c7986f70b473e9ff326ed473989aa6c0e9167e53409b66dc2eaa5a28f006aa9732fceddec6b37f22
+  checksum: 3dc0527f24e1200d8cdae608af0aedf020f92b1db54d0e402f8fba4516264aca223488a18857ab0d2d6861c754d469b295f409fe7bcbe669a1b35ca36a342207
   languageName: node
   linkType: hard
 
@@ -2514,9 +2556,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.3.896":
-  version: 1.4.7
-  resolution: "electron-to-chromium@npm:1.4.7"
-  checksum: b2903762b207d9b341aa6c792c43976c552a4a4516010979a9c5a37c6a81d46bdf1285348e76451d0788aa27de10ff66278013aaf3678e9d2c70d93bd8cf79ac
+  version: 1.4.8
+  resolution: "electron-to-chromium@npm:1.4.8"
+  checksum: 1b7ad23906baae9c01471a3290a93f274425219738432a96bd1961d4ac9f421d70ae31e5c2008c94d5bfe7bae8d31899b5ebe26e03362df586ab4b9f29cb3ee6
   languageName: node
   linkType: hard
 
@@ -3070,6 +3112,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"extract-files@npm:^11.0.0":
+  version: 11.0.0
+  resolution: "extract-files@npm:11.0.0"
+  checksum: 39ebd92772e9a1e30d1e3112fb7db85d353c8243640635668b615ac1d605ceb79fbb13d17829dd308993ef37bb189ad99817f79ab164ae95c9bb3df9f440bd16
+  languageName: node
+  linkType: hard
+
 "extract-stack@npm:^1.0.0":
   version: 1.0.0
   resolution: "extract-stack@npm:1.0.0"
@@ -3571,7 +3620,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql@npm:14.0.2 - 14.2.0 || ^14.3.1 || ^15.0.0, graphql@npm:^15.7.2":
+"graphql@npm:14.0.2 - 14.2.0 || ^14.3.1 || ^15.0.0, graphql@npm:^15.3.0, graphql@npm:^15.7.2":
   version: 15.7.2
   resolution: "graphql@npm:15.7.2"
   checksum: eacb746e2981d0c346ef7365601873963af5356f64ce4d890ab89d213c67bf5bc1ae957b93c3902198798774c842b55dff219f38bad858691765e4debc265750
@@ -6821,6 +6870,17 @@ __metadata:
     string-width: ^2.1.1
     strip-ansi: ^4.0.0
   checksum: 3eb33040a331278a7cb2c141562da0a4df0a2be54af23e67ed5ed9a26c5ddddb908324ef37dec5440b5ce6e79008f611471d6efc70c7ea2bf0234b210e3a90cc
+  languageName: node
+  linkType: hard
+
+"wrap-ansi@npm:^6.2.0":
+  version: 6.2.0
+  resolution: "wrap-ansi@npm:6.2.0"
+  dependencies:
+    ansi-styles: ^4.0.0
+    string-width: ^4.1.0
+    strip-ansi: ^6.0.0
+  checksum: 6cd96a410161ff617b63581a08376f0cb9162375adeb7956e10c8cd397821f7eb2a6de24eb22a0b28401300bf228c86e50617cd568209b5f6775b93c97d2fe3a
   languageName: node
   linkType: hard
 

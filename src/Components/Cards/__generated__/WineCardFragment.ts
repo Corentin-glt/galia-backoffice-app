@@ -16,7 +16,7 @@ export interface WineCardFragment_grapes {
 export interface WineCardFragment_picture {
   __typename: 'File';
   id: string;
-  url: string;
+  signedUrl: string | null;
   key: string;
 }
 

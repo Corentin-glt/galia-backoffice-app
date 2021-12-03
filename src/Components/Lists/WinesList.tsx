@@ -1,6 +1,6 @@
 import { gql, useQuery } from '@apollo/client';
 
-import WineCard from '../Card/WineCard';
+import WineCard from '../Cards/WineCard';
 import { GetWines, GetWinesVariables } from './__generated__/GetWines';
 
 const GET_WINES = gql`
@@ -24,7 +24,7 @@ function WinesList() {
   const count = data?.winesConnection.count || 0;
 
   return (
-    <div>
+    <div className="grid grid-cols-4 gap-4">
       {wines.length > 0 &&
         wines.map((wine) => {
           return <WineCard key={wine.id} wine={wine} />;

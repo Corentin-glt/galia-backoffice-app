@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { FindWinesInput } from './../../../__generated__/globalTypes';
+import { FindWinesInput } from '../../../__generated__/globalTypes';
 
 // ====================================================
 // GraphQL query operation: GetWines
@@ -18,7 +18,7 @@ export interface GetWines_winesConnection_items_grapes {
 export interface GetWines_winesConnection_items_picture {
   __typename: 'File';
   id: string;
-  url: string;
+  signedUrl: string | null;
   key: string;
 }
 

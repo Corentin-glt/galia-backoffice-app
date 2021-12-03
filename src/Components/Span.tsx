@@ -21,9 +21,10 @@ function Span(props: SpanProps) {
   const { active, font = Font.MEDIUM, size = Size.NORMAL, text } = props;
   return (
     <span
-      className={`font-sans ${font} ${size} ${
+      className={`font-sans ${font}  text-sm sm:${size} ${
         active ? 'text-blueGray-600' : 'text-gray-400'
-      }`}
+      }
+      `}
     >
       {text}
     </span>

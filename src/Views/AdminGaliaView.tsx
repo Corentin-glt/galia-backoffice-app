@@ -6,10 +6,8 @@ import WinesView from './WinesView';
 function AdminGalia() {
   return (
     <div className="h-full p-8 pb-0 space-y-8 flex flex-col justify-start content-center">
-      <div className="flex-4">
-        <div className="bg-white p-4 rounded-md flex flex-nowrap justify-start space-x-20">
-          <NavBar />
-        </div>
+      <div className="flex-4 bg-white p-4 rounded-md flex flex-nowrap justify-start space-x-20">
+        <NavBar />
       </div>
       <div className="flex-1">
         <Routes>
