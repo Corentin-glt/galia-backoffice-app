@@ -1,19 +1,15 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 
-import Button, { Intent } from '../Buttons/Button';
-
 interface ModalProps {
-  onCancel?: () => void;
   onClose: () => void;
-  onValidate?: () => void;
   isOpen: boolean;
   title: string;
-  children: JSX.Element;
+  children?: JSX.Element;
 }
 
 function Modal(props: ModalProps) {
-  const { onCancel, onValidate, onClose, title, isOpen, children } = props;
+  const { onClose, title, isOpen, children } = props;
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
@@ -50,25 +46,6 @@ function Modal(props: ModalProps) {
                 </Dialog.Title>
 
                 <div className="mt-2">{children}</div>
-
-                <div className="mt-4">
-                  <Button
-                    text="Cancel"
-                    intent={Intent.DANGER}
-                    onClick={() => {
-                      if (onCancel) onCancel();
-                      return onClose();
-                    }}
-                  />
-
-                  <Button
-                    text="Validate"
-                    onClick={() => {
-                      if (onValidate) onValidate();
-                      return onClose();
-                    }}
-                  />
-                </div>
               </div>
             </Transition.Child>
           </div>

@@ -7,6 +7,14 @@
 // START Enums and Input Objects
 //==============================================================
 
+export interface CreateWineInput {
+  description: string;
+  grapeIds: string[];
+  millenisme: number;
+  name: string;
+  wineyardId: string;
+}
+
 export interface FindWinesInput {
   millenisme?: number | null;
   name?: string | null;

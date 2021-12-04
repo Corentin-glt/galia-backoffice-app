@@ -1,7 +1,7 @@
 import { gql, useMutation } from '@apollo/client';
 import { CloudUploadIcon } from '@heroicons/react/solid';
-import Span, { Font } from '../Span';
 
+import Span, { Font } from '../Span';
 import {
   UploadWinePicture,
   UploadWinePictureVariables,
