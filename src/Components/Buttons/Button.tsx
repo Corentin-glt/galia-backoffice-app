@@ -38,7 +38,7 @@ function Button(props: ButtonProps) {
         focus-visible:ring-2 
         focus-visible:ring-offset-2 
         focus-visible:ring-${intent}-500`}
-        type="button"
+        // type="button"
         onClick={onClick}
       >
         {loading ? <Spinner text="loading" /> : text}

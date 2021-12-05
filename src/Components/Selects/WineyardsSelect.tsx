@@ -4,7 +4,7 @@ import { useFormContext } from 'react-hook-form';
 import Spinner from '../Spinner';
 import { GetWineyardsFromSelect } from './__generated__/GetWineyardsFromSelect';
 
-const GET_AUTHORS = gql`
+const GET_WINEYARDS = gql`
   query GetWineyardsFromSelect {
     wineyardsConnection(findWineyardsInput: {}) {
       items {
@@ -18,12 +18,13 @@ const GET_AUTHORS = gql`
 interface WineyardsSelectProps {
   className?: string;
   name: string;
+  required?: boolean;
 }
 
 function WineyardsSelect(props: WineyardsSelectProps) {
-  const { name, ...rest } = props;
+  const { name, required = false, ...rest } = props;
   const { register } = useFormContext();
-  const { data, loading } = useQuery<GetWineyardsFromSelect>(GET_AUTHORS);
+  const { data, loading } = useQuery<GetWineyardsFromSelect>(GET_WINEYARDS);
 
   if (loading) {
     return <Spinner text="loading wineyards" />;
@@ -36,7 +37,7 @@ function WineyardsSelect(props: WineyardsSelectProps) {
   const wineyards = data?.wineyardsConnection.items || [];
 
   return (
-    <select {...register(name)} {...rest}>
+    <select {...register(name, { required })} {...rest}>
       {wineyards.map((wineyard) => (
         <option key={wineyard.id} value={wineyard.id}>
           {wineyard.name}

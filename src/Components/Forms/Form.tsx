@@ -8,7 +8,7 @@ interface FormProps extends FormHTMLAttributes<unknown> {
   children?: ReactElement[];
   defaultValues?: any;
   schema: AnyObjectSchema | Lazy<any>;
-  onSubmit: (value: unknown) => void;
+  onSubmit: (value: any) => void;
 }
 
 function Form(props: FormProps) {

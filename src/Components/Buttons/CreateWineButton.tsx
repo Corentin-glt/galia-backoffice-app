@@ -1,16 +1,18 @@
 import { gql, useMutation } from '@apollo/client';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 import * as yup from 'yup';
 
 import WineCard from '../Cards/WineCard';
 import Form from '../Forms/Form';
 import { Input } from '../Inputs/Input';
+import { TextArea } from '../Inputs/TextAreaInput';
 import Modal from '../Modals/Modal';
+import GrapesMultiSelect from '../Selects/GrapesMultiSelect';
 import WineyardsSelect from '../Selects/WineyardsSelect';
+import Span, { Size } from '../Span';
 import { createWine, createWineVariables } from './__generated__/createWine';
 import Button, { Intent } from './Button';
-import Span, { Size } from '../Span';
-import { TextArea } from '../Inputs/TextAreaInput';
 
 const CREATE_WINE = gql`
   mutation createWine($createWineInput: CreateWineInput!) {
@@ -35,7 +37,12 @@ function CreateWineButton() {
   const [createWine, { loading }] = useMutation<
     createWine,
     createWineVariables
-  >(CREATE_WINE);
+  >(CREATE_WINE, {
+    refetchQueries: ['GetWines'],
+    onCompleted() {
+      toast.success('New wine created with success');
+    },
+  });
 
   return (
     <>
@@ -46,27 +53,38 @@ function CreateWineButton() {
         onClose={() => setIsOpen(false)}
       >
         <Form
+          defaultValues={{
+            description: '',
+            grapeIds: null,
+            millenisme: null,
+            name: '',
+            wineyardId: '',
+          }}
           schema={schema}
-          onSubmit={
-            (value) => console.log(value)
-            // createWine({
-            //   variables: {
-            //     createWineInput: {
-            //       description: value.descritpion,
-            //     },
-            //   },
-            // })
-          }
+          onSubmit={async (value) => {
+            await createWine({
+              variables: {
+                createWineInput: {
+                  description: value.description,
+                  grapeIds: value.grapeIds,
+                  millenisme: value.millenisme,
+                  name: value.name,
+                  wineyardId: value.wineyardId,
+                },
+              },
+            });
+            return setIsOpen(false);
+          }}
           className="flex flex-col space-y-2"
         >
           <div className="flex space-x-2">
             <div>
               <Span text="Name:" active size={Size.SMALL} />
-              <Input type="text" name="name" />
+              <Input type="text" name="name" required />
             </div>
             <div>
               <Span text="Millenisme:" active size={Size.SMALL} />
-              <Input type="number" name="millenisme" />
+              <Input type="number" name="millenisme" required />
             </div>
           </div>
           <div>
@@ -74,8 +92,12 @@ function CreateWineButton() {
             <TextArea name="description" />
           </div>
           <div>
-            <Span text="Select a domaine:" active size={Size.SMALL} />
-            <WineyardsSelect name="wineyardId" />
+            <Span text="Domaine:" active size={Size.SMALL} />
+            <WineyardsSelect name="wineyardId" required />
+          </div>
+          <div>
+            <Span text="Grapes:" active size={Size.SMALL} />
+            <GrapesMultiSelect className="form-multiselect" name="grapeIds" />
           </div>
           <div>
             <div className="mt-2 flex justify-between">

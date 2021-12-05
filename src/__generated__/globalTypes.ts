@@ -26,6 +26,15 @@ export interface PaginationInput {
   offset?: number | null;
 }
 
+export interface UpdateWineInput {
+  description?: string | null;
+  grapeIds?: string[] | null;
+  id: string;
+  millenisme?: number | null;
+  name?: string | null;
+  wineyardId?: string | null;
+}
+
 //==============================================================
 // END Enums and Input Objects
 //==============================================================

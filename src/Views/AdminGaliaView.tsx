@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import NavBar from '../Components/NavBar';
 import WinesView from './WinesView';
+import WineView from './WineView';
 
 function AdminGalia() {
   return (
@@ -13,6 +14,7 @@ function AdminGalia() {
         <Routes>
           <Route index element={<WinesView />} />
           <Route path="wines" element={<WinesView />} />
+          <Route path="wines/:wineId" element={<WineView />} />
         </Routes>
       </div>
     </div>

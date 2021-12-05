@@ -24,7 +24,7 @@ function WinesList() {
   const count = data?.winesConnection.count || 0;
 
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-5 gap-4">
       {wines.length > 0 &&
         wines.map((wine) => {
           return <WineCard key={wine.id} wine={wine} />;

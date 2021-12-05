@@ -1,4 +1,6 @@
 import { gql } from '@apollo/client';
+import { PencilIcon } from '@heroicons/react/solid';
+import { useNavigate } from 'react-router-dom';
 
 import UploadWinePictureInput from '../Inputs/UploadWinePictureInput';
 import Span, { Font, Size } from '../Span';
@@ -10,14 +12,16 @@ interface WineCardProps {
 
 function WineCard(props: WineCardProps) {
   const { wine } = props;
+  const navigate = useNavigate();
+  const redirect = () => navigate(`/wines/${wine.id}`);
 
   return (
-    <div className="bg-white flex flex-col shadow-lg rounded-md p-2 space-y-1">
+    <div className="bg-white flex flex-col shadow-lg rounded-md p-2 space-y-1 relative">
       <div className="flex-1 flex flex-nowrap">
         <div className="flex-1">
           {wine.picture ? (
             <img
-              className="w-full"
+              className="object-scale-down h-60 w-full"
               src={wine.picture.signedUrl || ''}
               alt={wine.picture.id}
             />
@@ -57,6 +61,12 @@ function WineCard(props: WineCardProps) {
           }`}
           font={Font.LIGHT}
         />
+      </div>
+      <div
+        className="absolute top-0 right-0 p-1 cursor-pointer"
+        onClick={redirect}
+      >
+        <PencilIcon className="w-4 h-4 text-blueGray-600" />
       </div>
     </div>
   );
