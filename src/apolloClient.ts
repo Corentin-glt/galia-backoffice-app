@@ -88,9 +88,33 @@ const cache = new InMemoryCache({
             id: args.id,
           });
         },
+        wineyard(_, { args, toReference }) {
+          if (!args) return null;
+          return toReference({
+            __typename: 'Wineyard',
+            id: args.id,
+          });
+        },
+        grape(_, { args, toReference }) {
+          if (!args) return null;
+          return toReference({
+            __typename: 'Grape',
+            id: args.id,
+          });
+        },
       },
     },
     WinesConnection: {
+      fields: {
+        items: offsetPagination(),
+      },
+    },
+    WineyardsConnection: {
+      fields: {
+        items: offsetPagination(),
+      },
+    },
+    GrapesConnection: {
       fields: {
         items: offsetPagination(),
       },
@@ -102,7 +126,8 @@ const isFile = (value: unknown) =>
   (typeof File !== 'undefined' && value instanceof File) ||
   (typeof Blob !== 'undefined' && value instanceof Blob);
 
-const isUpload = ({ variables }: any) => Object.values(variables).some(isFile);
+const isUpload = ({ variables }: Record<string, any>) =>
+  Object.values(variables).some(isFile);
 
 const splitLink = split(
   isUpload,

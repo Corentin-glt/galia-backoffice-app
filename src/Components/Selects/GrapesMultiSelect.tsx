@@ -7,7 +7,7 @@ import MultiSelect, { MultiSelectProps } from './MultiSelect';
 const GET_GRAPES = gql`
   query GetGrapesFromSelect {
     grapesConnection(findGrapesInput: {}) {
-      items {
+      items(paginationInput: {}) {
         id
         variety
       }

@@ -7,7 +7,7 @@ import { GetWineyardsFromSelect } from './__generated__/GetWineyardsFromSelect';
 const GET_WINEYARDS = gql`
   query GetWineyardsFromSelect {
     wineyardsConnection(findWineyardsInput: {}) {
-      items {
+      items(paginationInput: {}) {
         id
         name
       }

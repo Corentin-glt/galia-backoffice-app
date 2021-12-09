@@ -34,11 +34,11 @@ function WineCard(props: WineCardProps) {
           <Span text={wine.millenisme.toString()} />
           <div>
             <Span text="Grapes: " size={Size.SMALL} />
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  gap-2">
+            <div className="flex flex-wrap space-x-1 justify-start content-start">
               {wine.grapes.map((grape) => (
                 <div
                   key={grape.id}
-                  className="text-center rounded-md bg-blueGray-600"
+                  className="text-left p-1 h-8 rounded-md bg-blueGray-600"
                 >
                   <Span
                     text={`#${grape.variety}`}

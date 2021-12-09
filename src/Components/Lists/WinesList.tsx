@@ -44,7 +44,7 @@ function WinesList() {
         <Span text={`Total: ${count}`} active font={Font.BOLD} />
       </div>
       <div className="flex flex-col space-y-2">
-        <div className="grid grid-cols-5 gap-4">
+        <div className="grid xl:grid-cols-5 grid-cols-3 gap-4">
           {wines.length > 0 &&
             wines.map((wine) => {
               return <WineCard key={wine.id} wine={wine} />;
