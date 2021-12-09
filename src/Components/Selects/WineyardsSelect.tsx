@@ -27,7 +27,7 @@ function WineyardsSelect(props: WineyardsSelectProps) {
   const { data, loading } = useQuery<GetWineyardsFromSelect>(GET_WINEYARDS);
 
   if (loading) {
-    return <Spinner text="loading wineyards" />;
+    return <Spinner text="loading wineyards ..." />;
   }
   //TODO: error span
   // if (!data?.authorsConnection || error) {

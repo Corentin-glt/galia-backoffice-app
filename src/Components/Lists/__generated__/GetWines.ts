@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { FindWinesInput } from './../../../__generated__/globalTypes';
+import { PaginationInput } from './../../../__generated__/globalTypes';
 
 // ====================================================
 // GraphQL query operation: GetWines
@@ -50,5 +50,5 @@ export interface GetWines {
 }
 
 export interface GetWinesVariables {
-  findWinesInput: FindWinesInput;
+  pagination: PaginationInput;
 }

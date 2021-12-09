@@ -3,7 +3,7 @@ import WinesList from '../Components/Lists/WinesList';
 
 function WinesView() {
   return (
-    <div className="space-y-2">
+    <div className="space-y-4">
       <CreateWineButton />
       <WinesList />
     </div>

@@ -10,7 +10,7 @@ function Spinner(props: SpinnerProps) {
   return (
     <div className="flex justify-center items-center space-x-2">
       <svg
-        className="animate-spin h-4 w-4 fill-current text-white"
+        className="animate-spin h-4 w-4 fill-current text-blueGray-600"
         viewBox="0 0 512 512"
         xmlns="http://www.w3.org/2000/svg"
       >

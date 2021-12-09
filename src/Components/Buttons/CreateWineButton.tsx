@@ -92,12 +92,12 @@ function CreateWineButton() {
             <TextArea name="description" />
           </div>
           <div>
-            <Span text="Domaine:" active size={Size.SMALL} />
-            <WineyardsSelect name="wineyardId" required />
-          </div>
-          <div>
             <Span text="Grapes:" active size={Size.SMALL} />
             <GrapesMultiSelect className="form-multiselect" name="grapeIds" />
+          </div>
+          <div>
+            <Span text="Domaine:" active size={Size.SMALL} />
+            <WineyardsSelect name="wineyardId" required />
           </div>
           <div>
             <div className="mt-2 flex justify-between">

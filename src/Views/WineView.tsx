@@ -12,6 +12,7 @@ import { TextArea } from '../Components/Inputs/TextAreaInput';
 import GrapesMultiSelect from '../Components/Selects/GrapesMultiSelect';
 import WineyardsSelect from '../Components/Selects/WineyardsSelect';
 import Span, { Size } from '../Components/Span';
+import Spinner from '../Components/Spinner';
 import { GetWine, GetWineVariables } from './__generated__/GetWine';
 import { UpdateWine, UpdateWineVariables } from './__generated__/UpdateWine';
 
@@ -45,7 +46,11 @@ const schema = yup.object().shape({
 
 function WineView() {
   const { wineId } = useParams<string>();
-  const { data } = useQuery<GetWine, GetWineVariables>(GET_WINE, {
+  const {
+    data,
+    loading: loadingWine,
+    error,
+  } = useQuery<GetWine, GetWineVariables>(GET_WINE, {
     variables: { id: wineId || '' },
   });
   const [updateWine, { loading }] = useMutation<
@@ -57,9 +62,14 @@ function WineView() {
     },
   });
 
-  if (!data) {
+  if (loadingWine) {
+    return <Spinner />;
+  }
+
+  if (error || !data) {
     return <Span text="Something wrong happened" />;
   }
+
   const wine = data.wine;
 
   return (
@@ -104,12 +114,19 @@ function WineView() {
           <TextArea name="description" />
         </div>
         <div>
-          <Span text="Domaine:" active size={Size.SMALL} />
-          <WineyardsSelect name="wineyardId" required />
+          <Span text="Grapes:" active size={Size.SMALL} />
+          <GrapesMultiSelect
+            className="form-multiselect"
+            name="grapeIds"
+            defaultValue={wine.grapes.map((grape) => ({
+              value: grape.id,
+              label: grape.variety,
+            }))}
+          />
         </div>
         <div>
-          <Span text="Grapes:" active size={Size.SMALL} />
-          <GrapesMultiSelect className="form-multiselect" name="grapeIds" />
+          <Span text="Domaine:" active size={Size.SMALL} />
+          <WineyardsSelect name="wineyardId" required />
         </div>
         <div>
           <div className="mt-2 flex justify-between">

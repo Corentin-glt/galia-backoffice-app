@@ -67,7 +67,7 @@ function offsetPagination<T = Reference>(
       let items = existing ? existing.slice(0) : [];
       items = shouldRead ? items.filter(canRead) : items;
 
-      const offset = args[offsetKey] ?? 0;
+      const offset = args['paginationInput'][offsetKey] ?? 0;
       for (let i = 0; i < incoming.length; ++i) {
         items[offset + i] = incoming[i];
       }
@@ -79,6 +79,17 @@ function offsetPagination<T = Reference>(
 
 const cache = new InMemoryCache({
   typePolicies: {
+    Query: {
+      fields: {
+        wine(_, { args, toReference }) {
+          if (!args) return null;
+          return toReference({
+            __typename: 'Wine',
+            id: args.id,
+          });
+        },
+      },
+    },
     WinesConnection: {
       fields: {
         items: offsetPagination(),

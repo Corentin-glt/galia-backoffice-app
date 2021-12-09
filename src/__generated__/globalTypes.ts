@@ -15,12 +15,6 @@ export interface CreateWineInput {
   wineyardId: string;
 }
 
-export interface FindWinesInput {
-  millenisme?: number | null;
-  name?: string | null;
-  pagination?: PaginationInput | null;
-}
-
 export interface PaginationInput {
   limit?: number | null;
   offset?: number | null;
