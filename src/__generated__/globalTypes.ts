@@ -15,6 +15,10 @@ export interface CreateWineInput {
   wineyardId: string;
 }
 
+export interface CreateWineyardInput {
+  name: string;
+}
+
 export interface PaginationInput {
   limit?: number | null;
   offset?: number | null;

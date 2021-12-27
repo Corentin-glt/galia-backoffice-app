@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
-import { PencilIcon } from '@heroicons/react/solid';
 import { useNavigate } from 'react-router-dom';
 
+import Button from '../Buttons/Button';
 import UploadWinePictureInput from '../Inputs/UploadWinePictureInput';
 import Span, { Font, Size } from '../Span';
 import { WineCardFragment } from './__generated__/WineCardFragment';
@@ -53,20 +53,10 @@ function WineCard(props: WineCardProps) {
       </div>
       <div className="flex-2 flex flex-col p-2">
         <Span text={wine.wineyard.name} font={Font.BOLD} />
-        <Span
-          text={`${
-            wine.description.length > 30
-              ? wine.description.slice(0, 30) + '...'
-              : wine.description
-          }`}
-          font={Font.LIGHT}
-        />
+        <Span text={wine.description} font={Font.LIGHT} />
       </div>
-      <div
-        className="absolute top-0 right-0 p-1 cursor-pointer"
-        onClick={redirect}
-      >
-        <PencilIcon className="w-4 h-4 text-blueGray-600" />
+      <div className="absolute bottom-0 right-0">
+        <Button text="Edit" onClick={redirect} disableHover />
       </div>
     </div>
   );

@@ -1,20 +1,24 @@
-const colors = require("tailwindcss/colors");
+const colors = require('tailwindcss/colors');
 
 module.exports = {
-  purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
         transparent: 'transparent',
-        blueGray: colors.blueGray,
-        gray: colors.gray,
+        blueGray: colors.slate,
+        gray: colors.zinc,
+        trueGray: colors.neutral,
+        red: colors.red,
+        stone: colors.stone,
         white: colors.white,
+        orange: colors.orange,
       },
     },
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/typography'),
+  ],
 };
